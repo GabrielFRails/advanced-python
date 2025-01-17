@@ -6,17 +6,18 @@ class Node:
 class SimpleLinkedList:
 	def __init__(self):
 		self.head = None
+		self.tail = None
 	
 	def append(self, data):
 		new_node = Node(data)
 		if not self.head:
 			self.head = new_node
+			self.tail = new_node
 			return
 		
-		current = self.head
-		while current.next:
-			current = current.next
+		current = self.tail
 		current.next = new_node
+		self.tail = new_node
 	
 	def display(self):
 		elements = []
