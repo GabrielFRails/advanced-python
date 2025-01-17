@@ -41,6 +41,19 @@ class SimpleLinkedList:
 		new_node.next = current.next
 		current.next = new_node
 	
+	def append_value(self, data, value):
+		new_node = Node(data)
+		if value == self.head.data:
+			new_node.next = self.head
+			self.head = new_node
+			return
+
+		current = self.head
+		while current.next:
+			if current.next.data == value:
+				new_node.next = current.next
+				current.next = new_node
+	
 	def display(self):
 		elements = []
 		current = self.head
@@ -55,7 +68,8 @@ def main():
 	for i in range(0, 10):
 		myll.append_tail(i)
 	
-	myll.append_index(99, 1)
+	myll.append_index(99, 0)
+	myll.append_value(100, 99)
 	myll.display()
 
 if __name__ == "__main__":
