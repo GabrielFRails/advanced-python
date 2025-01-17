@@ -8,7 +8,7 @@ class SimpleLinkedList:
 		self.head = None
 		self.tail = None
 	
-	def append(self, data):
+	def append_tail(self, data):
 		new_node = Node(data)
 		if not self.head:
 			self.head = new_node
@@ -31,7 +31,7 @@ class SimpleLinkedList:
 def main():
 	myll = SimpleLinkedList()
 	for i in range(0, 10):
-		myll.append(i)
+		myll.append_tail(i)
 	
 	myll.display()
 
